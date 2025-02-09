@@ -1,5 +1,5 @@
 import Counter from "components/Counter/Counter";
-import { Lesson17Wrapper } from './styles'
+import { Lesson17Wrapper } from '../../lessons/Lesson17/styles'
 
 function Lesson17() {
   return (

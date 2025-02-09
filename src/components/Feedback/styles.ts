@@ -8,7 +8,9 @@ export const FeedbackContainer = styled.div`
   gap: 30px;
   min-width: 800px;
   padding: 20px;
-  background-color: rgb(129, 212, 212);
+  background-color: rgb(220, 208, 231);
+  border: 2px solid rgb(33, 62, 143);
+  border-radius: 4px;
 `
 
 export const FeedbackResultContainer = styled.div`
@@ -28,7 +30,7 @@ export const LikeDislikeContainer = styled.div`
 export const Result = styled.div`
   font-size: 30px;
   font-weight: bold;
-  color: rgb(17, 17, 70);
+  color: rgb(15, 21, 71);
 `
 
 

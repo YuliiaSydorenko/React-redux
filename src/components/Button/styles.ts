@@ -11,7 +11,7 @@ export const MainButton = styled.button<MainButtonStyledProps>`
   outline: none;
   border: none;
   padding: 20px;
-  background:${({ disabled, $isRed }) => disabled ? '#bebec7' : $isRed ? '#f02e0c' : '#1f27f5'};
+  background:${({ disabled, $isRed }) => disabled ? '#bebec7' : $isRed ? '#f02e0c' : '#711ff5'};
   border-radius: 4px;
   color: white;
   font-family: Lato, Geneva, Tahoma, sans - serif;
