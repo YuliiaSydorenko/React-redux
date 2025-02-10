@@ -15,9 +15,16 @@ export const feedbackSlice = createAppSlice({
     addDislike: create.reducer((state) => {
       state.dislikes += 1;
     }),
+    // способ 1 - перезапись свойств
     resetFeedback: create.reducer((state) => {
       state.likes = 0;
       state.dislikes = 0;
+      // способ 2 - возвращаем начальное состояние (вместо перезаписи свойств)
+      // return feedbackInitialState;
+      // resetResults: create.reducer((state) => {
+      // feedbackInitialState;
+      // если в объекте несколько свойств, то лучше возвращать начальное состояние
+
     }),
   }),
   selectors: {

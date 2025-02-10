@@ -6,9 +6,9 @@ export const FeedbackContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
-  min-width: 800px;
+  min-width: 400px;
   padding: 20px;
-  background-color: rgb(220, 208, 231);
+  background-color: rgb(148, 216, 179);
   border: 2px solid rgb(33, 62, 143);
   border-radius: 4px;
 `

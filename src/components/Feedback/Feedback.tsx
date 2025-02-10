@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "store/hooks"; // ✅ Используем правильные хуки
+import { useAppDispatch, useAppSelector } from "store/hooks"; 
 import { feedbackActions, feedbackSelectors } from "store/redux/feedback/feedbackSlice"; 
 import Button from "../Button/Button";
 import {
