@@ -1,5 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalStyles from "./styles/GlobalStyles";
+import Counter from "components/Counter/Counter"; 
+
+
+
 
 // Lessons
 // import Lesson17 from "lessons/Lesson17/Lesson17";
@@ -24,6 +28,7 @@ const App = () => {
           <Route path="/users" element={<Users />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/homework17" element={<Homework17 />} />
+          <Route path="/counter" element={<Counter />} />
           <Route path="*" element={<h1>Page not found</h1>} /> 
         </Routes>
       </Layout>

@@ -1,6 +1,6 @@
 import Input from "../../../components/Input/Input"
 import Button from "../../../components/Button/Button"
-
+import { Link } from "react-router-dom"; 
 import { HomePageWrapper, UserForm, UserFormName } from "./styles"
 import { useFormik } from "formik"
 import { UserFormNames } from "./types"
@@ -51,6 +51,18 @@ function Home() {
         />
         <Button name="Create" type="submit" />
       </UserForm>
+      <nav> 
+  <div>
+    {/* <Link to="/counter" style={{ textDecoration: "none" }}>
+      <Button name="Go to Counter" type="button" />
+    </Link>
+  </div>
+  <div>
+    <Link to="/feedback" style={{ textDecoration: "none" }}>
+      <Button name="Go to Feedback" type="button" />
+    </Link> */}
+  </div>
+      </nav>
     </HomePageWrapper>
   )
 }
