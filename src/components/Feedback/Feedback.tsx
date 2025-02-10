@@ -1,5 +1,6 @@
-import { useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../store/store";  
+import { feedbackActions, feedbackSelectors } from "../../store/redux/feedback/feedbackSlice";
 import Button from "../Button/Button";
 import {
   FeedbackContainer,
@@ -9,36 +10,22 @@ import {
 } from "./styles";
 
 function Feedback() {
-  const [likes, setLikes] = useState<number>(0);
-  const [dislike, setDislike] = useState<number>(0);
-  console.log("render");
-
-  const addLike = (): void => {
-    setLikes((prevValue) => prevValue + 1);
-  };
-
-  const addDislike = (): void => {
-    setDislike((prevValue) => prevValue + 1);
-  };
-
-  const resetResults = (): void => {
-    setLikes(0);
-    setDislike(0);
-  };
+  const dispatch = useDispatch();
+  const { likes, dislikes } = useSelector((state: RootState) => state.feedback); 
 
   return (
     <FeedbackContainer>
       <FeedbackResultContainer>
         <LikeDislikeContainer>
           <Result>{likes}</Result>
-          <Button name="LIKE" type="button" onClick={addLike} />
+          <Button name="LIKE" type="button" onClick={() => dispatch(feedbackActions.addLike())} />
         </LikeDislikeContainer>
         <LikeDislikeContainer>
-          <Result>{dislike}</Result>
-          <Button name="DISLIKE" type="button" onClick={addDislike} />
+          <Result>{dislikes}</Result>
+          <Button name="DISLIKE" type="button" onClick={() => dispatch(feedbackActions.addDislike())} />
         </LikeDislikeContainer>
       </FeedbackResultContainer>
-      <Button name="RESET RESULTS" type="button" onClick={resetResults} />
+      <Button name="RESET RESULTS" type="button" onClick={() => dispatch(feedbackActions.resetFeedback())} />
     </FeedbackContainer>
   );
 }

@@ -7,8 +7,8 @@ export const CounterWrapper= styled.div`
   gap: 20px;
   min-width: 400px;
   padding: 20px;
-  background-color: rgb(184, 235, 235);
-  border: 2px solid rgb(31, 31, 141);
+  background-color: rgb(206, 243, 243);
+  border: 2px solid rgb(33, 62, 143);
   border-radius: 4px;
 `
 export const ButtonWrapper= styled.div`
@@ -17,5 +17,5 @@ export const ButtonWrapper= styled.div`
 export const ResultContainer= styled.div`
   font-size: 24px;
   font-weight: bold;
-  color: rgb(15, 15, 75);
+  color: rgb(16, 15, 75);
 `

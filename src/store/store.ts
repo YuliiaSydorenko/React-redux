@@ -1,40 +1,36 @@
-import type { Action, ThunkAction } from "@reduxjs/toolkit"
-import { combineSlices, configureStore } from "@reduxjs/toolkit"
-import { setupListeners } from "@reduxjs/toolkit/query"
+import type { Action, ThunkAction } from "@reduxjs/toolkit";
+import { combineSlices, configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import { counterSlice } from "./redux/counter/counterSlise";
+import { feedbackSlice } from "./redux/feedback/feedbackSlice";
 
-// 8. Передаём созданные слайсы в combineSlices
-//const rootReducer = combineSlices(counterSlice)
-import { counterSlice} from  "./redux/counter/counterSlise" 
+// 1️⃣ Создаём rootReducer с двумя slice
+const rootReducer = combineSlices(counterSlice, feedbackSlice);
 
-// `combineSlices` automatically combines the reducers using
-// their `reducerPath`s, therefore we no longer need to call `combineReducers`.
-const rootReducer = combineSlices()
-// Infer the `RootState` type from the root reducer
-export type RootState = ReturnType<typeof rootReducer>
 
-// The store setup is wrapped in `makeStore` to allow reuse
-// when setting up tests that need the same store config
+// 2️⃣ Определяем RootState на основе rootReducer
+export type RootState = ReturnType<typeof rootReducer>;
+
+// 3️⃣ Функция создания хранилища
 export const makeStore = (preloadedState?: Partial<RootState>) => {
   const store = configureStore({
     reducer: rootReducer,
-    
     preloadedState,
-  })
-  // configure listeners using the provided defaults
-  // optional, but required for `refetchOnFocus`/`refetchOnReconnect` behaviors
-  setupListeners(store.dispatch)
-  return store
-}
+  });
 
-export const store = makeStore()
+  setupListeners(store.dispatch);
+  return store;
+};
 
-// Infer the type of `store`
-export type AppStore = typeof store
-// Infer the `AppDispatch` type from the store itself
-export type AppDispatch = AppStore["dispatch"]
+// 4️⃣ Создаём store (основное хранилище)
+export const store = makeStore();
+
+// 5️⃣ Определяем типы для использования в Redux
+export type AppStore = typeof store;
+export type AppDispatch = AppStore["dispatch"];
 export type AppThunk<ThunkReturnType = void> = ThunkAction<
   ThunkReturnType,
   RootState,
   unknown,
   Action
->
+>;

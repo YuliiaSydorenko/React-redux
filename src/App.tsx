@@ -1,16 +1,15 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GlobalStyles from "./styles/GlobalStyles";
 
-import GlobalStyles from './styles/GlobalStyles'
+// Lessons
+// import Lesson17 from "lessons/Lesson17/Lesson17";
+import Layout from "pages/UsersApp/Layout/Layout";
+import Home from "pages/UsersApp/Home/Home";
+import Users from "pages/UsersApp/Users/Users";
 
-//lessons
-import Lesson17 from 'lessons/Lesson17/Lesson17'
-import Layout from 'pages/UsersApp/Layout/Layout'
-import Home from 'pages/UsersApp/Home/Home'
-import Users from 'pages/UsersApp/Users/Users'
-
-//homeworks
-
-//consultations
+// Homeworks
+import Homework17 from "./homeworks/Homework17/Homework17"; 
+import  Feedback  from "./components/Feedback/Feedback";
 
 const App = () => {
   return (
@@ -20,13 +19,17 @@ const App = () => {
       {/* UserApp - Practice - Lesson17 */}
       <Layout>
         <Routes>
-          <Route path='/' element={<Home/>}/>
-          <Route path='/users' element={<Users/>}/>
-          <Route path='*' element='Page not found'/>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/" element={<Navigate to="/homework17" />} /> */}
+          <Route path="/users" element={<Users />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/homework17" element={<Homework17 />} />
+          <Route path="*" element={<h1>Page not found</h1>} /> 
         </Routes>
       </Layout>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
+//http://localhost:5173/homework17
