@@ -1,6 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store/store";  
-import { feedbackActions, feedbackSelectors } from "../../store/redux/feedback/feedbackSlice";
+import { useAppDispatch, useAppSelector } from "store/hooks"; // ✅ Используем правильные хуки
+import { feedbackActions, feedbackSelectors } from "store/redux/feedback/feedbackSlice"; 
 import Button from "../Button/Button";
 import {
   FeedbackContainer,
@@ -10,8 +9,8 @@ import {
 } from "./styles";
 
 function Feedback() {
-  const dispatch = useDispatch();
-  const { likes, dislikes } = useSelector((state: RootState) => state.feedback); 
+  const dispatch = useAppDispatch();
+  const { likes, dislikes } = useAppSelector((state) => state.FEEDBACK); 
 
   return (
     <FeedbackContainer>
