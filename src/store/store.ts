@@ -5,10 +5,8 @@ import { counterSlice } from "./redux/counter/counterSlise";
 import { feedbackSlice } from "./redux/feedback/feedbackSlice";
 
 // 1️⃣ Создаём rootReducer с двумя slice
-const rootReducer = combineSlices({
-  counter: counterSlice.reducer, 
-  feedback: feedbackSlice.reducer, 
-});
+const rootReducer = combineSlices(counterSlice, feedbackSlice);
+
 
 // 2️⃣ Определяем RootState на основе rootReducer
 export type RootState = ReturnType<typeof rootReducer>;
