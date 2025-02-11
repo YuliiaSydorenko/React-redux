@@ -21,6 +21,7 @@ import Homework17 from "./homeworks/Homework17/Homework17";
 // Components (добавляем Feedback и Counter)
 import Feedback from "components/Feedback/Feedback"; 
 import Counter from "components/Counter/Counter"; 
+import AdviceRandomizer from "components/AdviceRandomizer/AdviceRandomizer"; 
 
 
 
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/advice" element={<AdviceRandomizer />} />
           <Route path="/lesson18" element={<Lesson18 />} />
           <Route path="/homework17" element={<Homework17 />} />
           {/* <Route path="/homework18" element={<Homework18 />} /> */}
