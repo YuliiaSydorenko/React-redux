@@ -4,7 +4,7 @@ export const AdviceWrapper = styled.div`
    display: flex;
  flex-direction: column;
  align-items: center;
- background-color: mediumaquamarine;
+ background-color: #cda3f9; 
  flex: 1;
  padding: 50px;
  border-color: blanchedalmond;
@@ -12,7 +12,7 @@ export const AdviceWrapper = styled.div`
 `;
 export const AdviceCard = styled.div`
  display: flex;
- flex-direction: column;
+ flex-direction: column;  
  align-items: center;
  justify-content: space-between;
  gap: 100px;
@@ -24,18 +24,11 @@ export const AdviceCard = styled.div`
  border-radius: 10px;
 `
 
-export const JokesContainer = styled.div`
- display: flex;
- flex-direction: column;
- gap: 20px;
-`
-
 export const AdviceList = styled.div`
  font-size: 24px;
  font-weight: bold;
  color: rebeccapurple;
 `
-
 
 export const AdviceText = styled.li`
   list-style: none;

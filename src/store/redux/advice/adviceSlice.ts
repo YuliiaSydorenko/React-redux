@@ -4,8 +4,8 @@ import axios from "axios";
 
 const adviceInitialState: AdviceState = {
   advices: [],
-  status: "idle",
-  error: null,
+  status: "default",
+  error: undefined,
 };
 
 export const adviceSlice = createAppSlice({
